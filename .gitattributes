@@ -1,0 +1,6 @@
+# See this article for reference: https://help.github.com/articles/dealing-with-line-endings/
+# Refreshing repo after line ending change:
+# https://help.github.com/articles/dealing-with-line-endings/#refreshing-a-repository-after-changing-line-endings
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text eol=lf
