@@ -1,62 +1,29 @@
-# Functions
-source ~/.shell/functions.sh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Allow local customizations in the ~/.shell_local_before file
-if [ -f ~/.shell_local_before ]; then
-    source ~/.shell_local_before
-fi
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Allow local customizations in the ~/.zshrc_local_before file
-if [ -f ~/.zshrc_local_before ]; then
-    source ~/.zshrc_local_before
-fi
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="devcontainers"
+ZSH_THEME="intheloop"
+# ZSH_THEME="josh"
 
-# External plugins (initialized before)
-if [ -f ~/.zsh/plugins_before.zsh ]; then
-    source ~/.zsh/plugins_before.zsh
-fi
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Settings
-if [ -f ~/.zsh/settings.zsh ]; then
-    source ~/.zsh/settings.zsh
-fi
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
-# Bootstrap
-if [ -f ~/.shell/bootstrap.sh ]; then
-    source ~/.shell/bootstrap.sh
-fi
+source $ZSH/oh-my-zsh.sh
 
-# External settings
-if [ -f ~/.shell/external.sh ]; then
-    source ~/.shell/external.sh
-fi
+# User configuration
 
 # Aliases
-if [ -f ~/.shell/aliases.sh ]; then
-    source ~/.shell/aliases.sh
-fi
-
-# Custom prompt
-if [ -f ~/.zsh/prompt.zsh ]; then
-    source ~/.zsh/prompt.zsh
-fi
-
-# External plugins (initialized after)
-if [ -f ~/.zsh/plugins_after.zsh ]; then
-    source ~/.zsh/plugins_after.zsh
-fi
-
-# Allow local customizations in the ~/.shell_local_after file
-if [ -f ~/.shell_local_after ]; then
-    source ~/.shell_local_after
-fi
-
-# Allow local customizations in the ~/.zshrc_local_after file
-if [ -f ~/.zshrc_local_after ]; then
-    source ~/.zshrc_local_after
-fi
-
-# Allow private customizations (not checked in to version control)
-if [ -f ~/.shell_private ]; then
-    source ~/.shell_private
-fi
+alias gs='git status'
+alias gf='git fetch -p'
+alias gp='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpa='git pull'
+alias gg='git gc --prune=now'
