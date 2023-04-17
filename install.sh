@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 
 print_lines()
 {
@@ -7,11 +7,11 @@ print_lines()
 
 print_command()
 {
-    echo ""
     print_lines
     echo $1
     print_lines
 }
 
-print_command "Setup Zsh"
+print_command "Setup - Zsh"
 cp zshrc ~/.zshrc
+print_command "Setup Complete"
